@@ -1,0 +1,18 @@
+flc:
+  enabled: true
+  defaultMapProfile: http://servicewell.se/StructureDefinition/LiquidStructureMap
+  engine: liquid
+  inputFolder: input/flc
+  mapFolder: input/maps
+  validateTerminology: true
+
+runtime:
+  output: bundle
+  exportPath: out/fhir-bundle.json
+
+terminology:
+  requires:
+    - package: hl7.fhir.eu.laboratory
+      version: 0.1.0
+      resources:
+        - http://hl7.eu/fhir/laboratory/ConceptMap/ConceptMap-eu-diagRptStatus2CompStatus
