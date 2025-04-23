@@ -1,0 +1,16 @@
+{
+    "Mapping": {
+        "CodeSystem/administrativegender": {
+            "M": {
+                "code": "male", 
+                "display": "Male", 
+                "system": "http://hl7.org/fhir/administrative-gender"
+            }, 
+            "F": {
+                "code": "female", 
+                "display": "Female", 
+                "system": "http://hl7.org/fhir/administrative-gender"
+            }
+        }
+    }
+}
