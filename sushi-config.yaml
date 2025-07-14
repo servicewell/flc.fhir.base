@@ -5,11 +5,11 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: servicewell.fhir.flc
 canonical: http://puri.fhir.link/flc
-name: servicewell.fhir.flc
+name: flc
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
-version: 0.1.0
+version: 0.2.2
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -62,8 +62,9 @@ publisher:
 # For parameters defined by the FHIR Tools IG see:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
-# parameters:
-#   excludettl: true
+parameters:
+  path-binary: [input\flc\templates, input\flc\templates\resources, input\flc\templates\variables, input\flc\templates\elements]
+  excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

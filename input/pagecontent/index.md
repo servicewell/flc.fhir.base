@@ -30,13 +30,18 @@ This IG is structured as follows:
 
 ```bash
 input/
-├── fsh/              # FSH files defining profiles, extensions, and resources
-├── flc/              # Liquid templates for FLC transformation
-├── xml/              # Example XML input messages
-├── maps/             # StructureMap instances for metadata representation
-├── terminology/      # ConceptMaps and CodeSystems used in mapping
-index.md              # This file
-sushi-config.yaml     # Standard SUSHI configuration
+├── fsh/                  # Standard FSH files defining models, mappings, and terminology used in the transformation
+│   ├── logicalmodels/    # Logical models representing source and target structures
+│   ├── logicalmaps/      # ConceptMaps used exclusively for logical (structural) mapping, not code translation
+│   ├── conceptmaps/      # ConceptMaps referenced by the mapping logic. These may be defined locally or resolved dynamically via a FHIR Terminology Server.
+│   ├── valuesets/        # ValueSets used during transformation; may be embedded or externally referenced via terminology service.
+│   ├── codesystems/      # CodeSystems used for validation or mapping, either defined in the IG or fetched at runtime.
+│   ├── structuremaps/    # FLC-specific StructureMap resources defining what to map and which Liquid template to use
+│   ├── examples/         # Generated mapping result examples in valid FHIR (result from liquid converter converts to FSH)
+├── flc/
+│   ├── templates/        # Liquid templates that perform the actual transformation logic
+│   ├── sampledata/       # Sample data files used for testing and demonstration of mappingss
+flc-config.yaml           # Configuration file specifying sources, targets, templates, and transformation behavior
 ```
 
 ---

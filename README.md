@@ -54,6 +54,7 @@ input/
 │   ├── valuesets/        # ValueSets used during transformation; may be embedded or externally referenced via terminology service.
 │   ├── codesystems/      # CodeSystems used for validation or mapping, either defined in the IG or fetched at runtime.
 │   ├── structuremaps/    # FLC-specific StructureMap resources defining what to map and which Liquid template to use
+│   ├── examples/         # Generated mapping result examples in valid FHIR (result from liquid converter converts to FSH)
 ├── flc/
 │   ├── templates/        # Liquid templates that perform the actual transformation logic
 │   ├── sampledata/       # Sample data files used for testing and demonstration of mappingss

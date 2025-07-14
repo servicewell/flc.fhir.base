@@ -8,12 +8,12 @@ Usage: #definition
 * title = "Mapping from gender-example to AdministrativeGender"
 * description = "ConceptMap showing how the local gender-example CodeSystem maps to FHIR AdministrativeGender."
 * status = #active
-* version = "1.0.0"
+* version = "1.1.1"
 * publisher = "Service Well AB"
 
 // Source and target CodeSystems
-* sourceUri = Canonical(GenderExample)
-* targetUri = "http://hl7.org/fhir/administrative-gender"
+* sourceUri = Canonical(GenderExampleVS)
+* targetUri = "http://hl7.org/fhir/ValueSet/administrative-gender"
 
 // Mapping definitions
 * group.source = Canonical(GenderExample)

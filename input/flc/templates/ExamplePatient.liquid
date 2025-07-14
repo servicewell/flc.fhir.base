@@ -14,7 +14,12 @@
             },
             "system": "urn:oid:2.16.840.1.113883.19.5",
             "value": "{{ msg.MRN }}"
-        }
+        },
+        {
+            "system": "http://fhir.purified.link/example/identifierSystem/ehr-source-system-dev",
+            "value": "{{ msg.PatientId }}"
+        },
+
     ],
     "active": true,
     "name": [

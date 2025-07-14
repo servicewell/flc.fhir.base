@@ -1,0 +1,13 @@
+{
+"name": "fhir.flc.template",
+"version": "0.1.1",
+"type": "fhir.template",
+"license": "CC0-1.0",
+"description": "FLC Template for generating FLC-Liquid output in IG",
+"author": "uri.d-t.se",
+"canonical": "http://puri.fhir.link/flc/template/fhir.flc.template",
+"base": "fhir.base.template",
+"dependencies": {
+    "fhir.base.template": "current"
+    }
+}

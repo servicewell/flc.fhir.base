@@ -5,7 +5,6 @@ Description: "Declares an external dependency on a terminology package (FHIR NPM
 
 Context: StructureMap.group.rule
 
-* ^url = "http://yourdomain.org/fhir/StructureDefinition/external-terminology-dependency"
 * ^status = #active
 * ^experimental = true
 * ^purpose = "Facilitates automated loading of external terminology packages from FHIR Package Servers at runtime or during deployment."
