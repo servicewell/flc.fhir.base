@@ -23,4 +23,3 @@ InstanceOf: Library
 * content[+].id = "ig-loader-ExamplePatient.json"
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "sampledata"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "ExamplePatient.json"
-
