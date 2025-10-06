@@ -90,48 +90,20 @@ All ConceptMaps referenced in FLC must be available in your local Ontoserver or 
 
 ---
 
-## 🚀 Getting Started as a Developer
+## Getting Started as a FLC Developer TODO
 
-👉 **Step 1: Clone or initialize this IG**
 
-```bash
-git clone https://github.com/servicewell/servicewell.fhir.flc.git
-cd servicewell.fhir.flc
-```
 
-👉 **Step 2: Install SUSHI and build IG**
 
-```bash
-npm install -g fsh-sushi
-sushi .
-```
 
-👉 **Step 3: Review Liquid templates**
+# Contribute TODO
+TODO: Explain how other users and developers can contribute to make your code better. 
 
-Navigate to `input/flc/*.liquid` and connect them to the appropriate `StructureMap`
-
-👉 **Step 4: Register terminology**
-
-Make sure Ontoserver (or your FHIR terminology server) has the required ConceptMaps installed.
-
-👉 **Step 5: Run conversion** (in your runtime environment)
-
-Use your FHIR Liquid Engine (e.g., `fhir-tools` or custom runtime) to process:
-
-```bash
-fhir-tools flc-run --map converter-limsxml --input input/xml/sample.xml
-```
-
----
 
 ## 📌 Placeholders to Complete
 
-- [ ] Define `StructureDefinition` profiles for each supported XML input
-- [ ] Include `TestScript` or `Bundle` with example input/output
 - [ ] Add narrative guides for developers and informaticians
 - [ ] Describe how to publish your FLC IG using CI/CD
-- [ ] Document fallback logic / error handling in Liquid templates
-- [ ] Add search index for available converters (in GUI or registry)
 
 ---
 
@@ -143,20 +115,7 @@ This guide is maintained by **Service Well AB**. For feedback or inquiries:
 🌐 https://www.servicewell.se
 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+ 
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)

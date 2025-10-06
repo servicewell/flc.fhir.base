@@ -1,6 +1,6 @@
-Logical: FLCPatient
-Id: flc-patient
-Title: "Table Dbo.Patient"
+Logical: FLCSourcePatient
+Id: flc-source-patient
+Title: "FLC Source Patient"
 Description: "This logical model defines the Patient source structure for test with FLC."
 * ^version = "1.0"
 * ^experimental = false
@@ -12,4 +12,4 @@ Description: "This logical model defines the Patient source structure for test w
 * Gender 1..1 string "Gender"
 * DOB 1..1 string "DOB"
 * TimeOfDeath 1..1 dateTime "TimeOfDeath"
-* Email 0..1 string "Email"
+* Email 0..1 string "Email" 

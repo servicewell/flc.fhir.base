@@ -1,7 +1,7 @@
 Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 
 Instance: FLCPatientToFHIR
-InstanceOf: LiquidStructureMap
+InstanceOf: FLCStructureMap
 Usage: #definition
 * name = "flc-patient-to-fhir"
 * id = "flc-patient-to-fhir"
@@ -14,7 +14,7 @@ Usage: #definition
 * contact.name = "Informatik, Enheten för Digitalisering"
 * description = "Example Structure Map"
 * jurisdiction = urn:iso:std:iso:3166#001 "World"
-* structure[0].url = Canonical(FLCPatient)
+* structure[0].url = Canonical(FLCSourcePatient)
 * structure[=].mode = #source
 * structure[+].url = Canonical(Patient)
 * structure[=].mode = #target
@@ -31,8 +31,10 @@ Usage: #definition
 * group.rule.target.context = "Destination"
 * group.rule.target.parameter[+].valueString = "liquid"
 // Liquid map metadata (mandatory in profile)
-* group.rule.target.extension[FhirLiquidMap].extension[package].valueString = "servicewell.fhir.flc"
-* group.rule.target.extension[FhirLiquidMap].extension[liquid].valueString = "ExamplePatient.liquid"
+* group.rule.target.extension[FhirLiquidMap].extension[flcPackage].valueString = "servicewell.fhir.flc"
+* group.rule.target.extension[FhirLiquidMap].extension[flcPackageVersion].valueString = "0.2.3"
+* group.rule.target.extension[FhirLiquidMap].extension[flcLibrary].valueCanonical = Canonical(FLCLibrary|0.2.3)
+* group.rule.target.extension[FhirLiquidMap].extension[liquidTemplate].valueString = "ExamplePatient.liquid"
 // External terminology dependencies (must be present in terminology server)
 //* group.rule.extension[ExternalTerminologyDependency].extension[package].valueString = "hl7.fhir.eu.laboratory"
 //* group.rule.extension[ExternalTerminologyDependency].extension[version].valueString = "0.1.0"
