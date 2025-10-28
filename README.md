@@ -7,11 +7,11 @@ Welcome to the Implementation Guide for **FHIR Liquid Conversion (FLC)**, a powe
 
 ## 🔍 What is FLC?
 
-FHIR Liquid Conversion (FLC) is a structured, opinionated way of managing input-to-FHIR transformations using Liquid templates and standard FHIR IG tooling. It builds on Microsoft's [FHIR Converter](https://github.com/microsoft/FHIR-Converter) but introduces several key improvements:
+FHIR Liquid Conversion (FLC) is a structured, opinionated way of managing input-to-FHIR transformations using Liquid templates and standard FHIR IG tooling. It builds on the open source project [FHIR Converter](https://github.com/microsoft/FHIR-Converter) but introduces several key improvements:
 
-## 🔧 About This Project: Building on the FHIR Liquid Converter (FLC)
+## 🔧 About This Implementationguide
 
-This Implementation Guide builds upon the work initiated by Microsoft in their [FHIR Liquid Converter (FLC)](https://github.com/microsoft/FHIR-Converter) project. We’ve **forked the original engine** and extended it with several enhancements, while maintaining full compatibility with the core transformation principles.
+This Implementation Guide adds profiles and extensions to be able to package FLC int an Implementation Guide.
 
 Rather than creating a separate transformation project structure around the engine, our goal is to **enable direct use of FLC within an IG**. All mapping resources – including FSH definitions and transformation templates – are authored and maintained inside the IG itself, making the conversion logic version-controlled and portable.
 
@@ -30,10 +30,10 @@ We have introduced the following key improvements to support our use cases:
 
 ## 🤝 Philosophy and Vision
 
-Our aim is not to replace or compete with Microsoft’s approach, but to **build on their open idea** in a way that aligns with our needs:
+Our aim is not to replace or compete with FHIR-Converter approach, but to **build on their open idea** in a way that aligns with our needs:
 
 - **IG-native workflows**: We believe mappings should live and evolve inside the IG that owns them – just like profiles do.
-- **Federated mappings**: The engine and templates are designed to reference **external Liquid templates and ConceptMaps**, allowing reuse across FLC-based IGs.
+- **Federated mappings**: The engine and templates are designed to reference **external Liquid templates and ConceptMaps**, allowing reuse across FLC-based IGs. (ToDo)
 - **Terminology-first**
 
 
@@ -49,6 +49,7 @@ Recomended IG structure:
 input/
 ├── fsh/                  # Standard FSH files defining models, mappings, and terminology used in the transformation
 │   ├── logicalmodels/    # Logical models representing source and target structures
+│   │   ├──source/        # Sourcemodels
 │   ├── logicalmaps/      # ConceptMaps used exclusively for logical (structural) mapping, not code translation
 │   ├── conceptmaps/      # ConceptMaps referenced by the mapping logic. These may be defined locally or resolved dynamically via a FHIR Terminology Server.
 │   ├── valuesets/        # ValueSets used during transformation; may be embedded or externally referenced via terminology service.
@@ -63,27 +64,26 @@ flc-config.yaml           # Configuration file specifying sources, targets, temp
 
 ---
 
-## 🔄 Dependencies
+## Dependencies
 
 If your FLC templates use external terminology (e.g. EU Laboratory standards), make sure to declare these as dependencies in your `sushi-config.yaml`:
 
 ```yaml
 dependencies:
-  hl7.fhir.eu.laboratory: 0.1.0
-  servicewell.fhir.flc.base: 1.0.0
+  hl7.fhir.eu.ips: 0.1.0
 ```
 
-All ConceptMaps referenced in FLC must be available in your local Ontoserver or terminology service.
+All ConceptMaps referenced in FLC must be available in your local FHIR terminology service.
 
 ---
 
-## 🧩 Components Explained
+## Components Explained
 
 - `StructureMap` (with profile `LiquidStructureMap`) is used to declare:
-  - Source structure (e.g., `LabLMLimsRequestResponseSourceXML`)
-  - Target structure (e.g., `Bundle` or `DiagnosticReport`)
-  - Linked Liquid template file
-  - Terminology packages
+  - Source structure (e.g., `FLCSourcePatient`)
+  - Target structure (e.g., `Patient`)
+  - Linked Liquid template file (e.g., `ExamplePatient.liquid`)
+  - Terminology packages (ToDo)
 
 - `ConceptMap` links external/local source codes to FHIR target values
 - `Liquid` templates transform parsed input → FHIR JSON using placeholders
@@ -124,7 +124,7 @@ fhir-tools flc-run --map converter-limsxml --input input/xml/sample.xml
 
 ---
 
-## 📌 Placeholders to Complete
+## Placeholders to Complete
 
 - [ ] Define `StructureDefinition` profiles for each supported XML input
 - [ ] Include `TestScript` or `Bundle` with example input/output
@@ -135,11 +135,9 @@ fhir-tools flc-run --map converter-limsxml --input input/xml/sample.xml
 
 ---
 
-## 📬 Contact
+##  Contact
 
-This guide is maintained by **Service Well AB**. For feedback or inquiries:
-
-📧 [info@servicewell.se](mailto:info@servicewell.se)
+This guide is maintained by **Service Well AB**. 
 🌐 https://www.servicewell.se
 
 
