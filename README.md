@@ -1,5 +1,5 @@
 
-# FLC Implementation Guide
+# FLC Implementation Guide 
 
 Welcome to the Implementation Guide for **FHIR Liquid Conversion (FLC)**, a powerful, template-driven approach to converting data into FHIR using Liquid templates enriched with terminology mappings. This guide is maintained by **Service Well AB**, the owner and maintainer of this FLC framework and associated IG tooling.
 
