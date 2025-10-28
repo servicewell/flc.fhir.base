@@ -12,3 +12,4 @@ _updatePublisher.bat
 _updatePublisher.sh
 
 .vscode/settings.json
+_gitHubPush.bat
