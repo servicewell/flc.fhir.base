@@ -12,3 +12,6 @@ _updatePublisher.bat
 _updatePublisher.sh
 
 .vscode/settings.json
+_build.bat
+flc-template/liquid/.index.db
+flc-template/package/.index.db
