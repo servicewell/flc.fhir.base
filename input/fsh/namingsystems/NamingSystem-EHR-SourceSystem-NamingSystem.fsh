@@ -3,8 +3,8 @@ InstanceOf: NamingSystem
 Title: "EHR Source System Patient Identifier"
 Description: "Example NamingSystem for patient IDs originating from a fictional EHR source system."
 Usage: #definition
-
-* name = "EHR-SourceSystem"
+* id = "ehr-sourcesystem-namingsystem"
+* name = "EHRSourceSystem"
 * status = #active
 * kind = #identifier
 * date = "2025-05-18"

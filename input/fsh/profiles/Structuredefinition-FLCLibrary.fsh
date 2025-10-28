@@ -7,10 +7,8 @@ Profile for Library used together with the FHIR Liquid Converter (FLC). Includes
 From this FLC-Library profile its possible to create the template folder structure neddened for the FHIR Liquid Converter to work.
 """
 
-* ^version = "0.5.1-draft"
 * ^status = #draft
 * ^experimental = true
-
 
 * type = $library-type#logic-library
 * content 1..* MS 

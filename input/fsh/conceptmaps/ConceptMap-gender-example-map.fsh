@@ -5,11 +5,11 @@ Instance: GenderExampleMap
 InstanceOf: ConceptMap
 Usage: #definition
 * id = "gender-example-map"
+* name = "GenderExampleMap"
 * title = "Mapping from gender-example to AdministrativeGender"
 * description = "ConceptMap showing how the local gender-example CodeSystem maps to FHIR AdministrativeGender."
-* status = #active
-* version = "1.1.1"
-* publisher = "Service Well AB"
+* status = #draft
+* experimental = true
 
 // Source and target CodeSystems
 * sourceUri = Canonical(GenderExampleVS)

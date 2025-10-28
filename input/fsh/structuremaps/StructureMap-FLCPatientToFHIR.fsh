@@ -21,8 +21,8 @@ Usage: #definition
 * group.name = "Examples"
 * group.typeMode = #none
 * group.documentation = "test -> testValue"
-* group.input.name = "test"
-* group.input.type = "FLCPatient"
+* group.input.name = "msg"
+* group.input.type = "FLCSourcePatient"
 * group.input.mode = #source
 * group.rule.name = "liquid"
 * group.rule.source.context = "source"

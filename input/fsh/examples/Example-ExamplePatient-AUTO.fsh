@@ -22,7 +22,7 @@ The resulting instance demonstrates how the FLC engine normalizes heterogeneous 
 * identifier[=].type = $v2-0203#MR
 * identifier[=].system = "urn:oid:2.16.840.1.113883.19.5"
 * identifier[=].value = "M0R1N2"
-* identifier[+].system = "http://fhir.purified.link/example/identifierSystem/ehr-source-system-dev"
+* identifier[+].system = "http://fhir.purified.link/example/identifierSystem/ehr-source-system-demo"
 * identifier[=].value = "12434"
 * active = true
 * name.family = "Smith"
