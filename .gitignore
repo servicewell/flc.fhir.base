@@ -13,6 +13,3 @@ _updatePublisher.sh
 
 .vscode/settings.json
 _gitHubPush.bat
-_build.bat
-flc-template/liquid/.index.db
-flc-template/package/.index.db

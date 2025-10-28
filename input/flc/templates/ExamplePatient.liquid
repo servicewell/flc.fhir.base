@@ -41,5 +41,9 @@
     ],
     "gender": "{{ msg.Gender | get_property: 'CodeSystem/administrativegender', 'code' -}}",
     "birthDate": "{{ msg.DOB | add_hyphens_date }}",
+    "managingOrganization": {
+        "reference": "Organization/2.16.840.1.113883.19.5",
+        "display": "Good Health Clinic"
+    },
     "deceasedDateTime": "{{ msg.TimeOfDeath }}"
 }
