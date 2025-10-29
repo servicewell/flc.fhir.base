@@ -36,7 +36,6 @@ Our aim is not to replace or compete with FHIR-Converter approach, but to **buil
 - **Federated mappings**: The engine and templates are designed to reference **external Liquid templates and ConceptMaps**, allowing reuse across FLC-based IGs. (ToDo)
 - **Terminology-first**
 
-
 FLC enables both **human-readable** and **machine-executable** transformations, directly linked to terminology servers and structured with official FHIR packaging mechanisms.
 
 ---
