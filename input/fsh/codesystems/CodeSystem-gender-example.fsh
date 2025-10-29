@@ -2,7 +2,8 @@ CodeSystem: GenderExample
 Id: gender-example
 Title: "Example Gender CodeSystem"
 Description: "Example CodeSystem that defines gender values for mapping purposes."
-* ^status = #active
+* ^status = #draft
+* ^experimental = true
 * ^content = #complete
 * ^caseSensitive = true
 * ^publisher = "Service Well AB"
@@ -22,5 +23,6 @@ ValueSet: GenderExampleVS
 Id: gender-example
 Title: "All Codes from Example Gender CodeSystem"
 Description: "Example ValueSet that defines gender values for mapping purposes."
-* ^status = #active
+* ^status = #draft
+* ^experimental = true
 * ^compose.include.system = Canonical(GenderExample)

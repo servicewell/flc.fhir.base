@@ -5,15 +5,15 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: servicewell.fhir.flc
 canonical: http://puri.fhir.link/flc
-name: flc
+name: servicewell-fhir-flc
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
-version: 0.2.2
-fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+version: 0.2.3
+fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
-# license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: Service Well AB
@@ -63,7 +63,7 @@ publisher:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  path-binary: [input\flc\templates, input\flc\templates\resources, input\flc\templates\variables, input\flc\templates\elements]
+  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\codesystem]
   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

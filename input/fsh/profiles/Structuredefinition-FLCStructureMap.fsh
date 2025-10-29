@@ -1,12 +1,11 @@
-Profile: LiquidStructureMap
+Profile: FLCStructureMap
 Parent: StructureMap
-Id: liquid-structuremap
-Title: "LiquidStructureMap"
+Id: flc-structuremap
+Title: "FLCStructureMap"
 Description: """
 Profile for StructureMap used together with the FHIR Liquid Converter. Includes metadata specifying which Liquid template and FHIR package are used, along with external terminology dependencies required for the conversion to function correctly.
 """
 
-* ^version = "0.0.2-draft"
 * ^status = #draft
 * ^experimental = true
 
