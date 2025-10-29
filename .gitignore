@@ -15,3 +15,4 @@ _updatePublisher.sh
 _build.bat
 flc-template/liquid/.index.db
 flc-template/package/.index.db
+_gitHubPush.bat
