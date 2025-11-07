@@ -1,0 +1,22 @@
+{
+    "name": "flc.fhir.base",
+    "version": "0.2.3",
+    "type": "IG",
+    "canonical": "http://canonical.fhir.link/flc/base",
+    "url": "http://canonical.fhir.link/flc/base/ImplementationGuide/flc.fhir.base",
+    "title": "FLC Implementation Guide",
+    "description": "Implementationsguide for FLC made by Service Well",
+    "fhirVersions": [ "4.0.1" ],
+    "dependencies": {},
+    "keywords": [
+        "flc"
+    ],
+    "author": "Service Well AB",
+    "maintainers": [
+      {
+        "name": "Olof Mattsson",
+        "email": "olof.mattsson@servicewell.se" 
+      }
+    ],
+    "license": "CC0-1.0"
+  }
