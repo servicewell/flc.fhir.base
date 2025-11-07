@@ -3,11 +3,11 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: servicewell.fhir.flc
-canonical: http://puri.fhir.link/flc
-name: servicewell-fhir-flc
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
+id: flc.fhir.base
+canonical: http://canonical.fhir.link/flc/base
+name: flc
+title: FLC Implementation Guide
+description: Implementationsguide for FLC made by Service Well
 status: draft # draft | active | retired | unknown
 version: 0.2.3
 fhirVersion: 4.0.1
