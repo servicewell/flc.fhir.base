@@ -8,7 +8,7 @@
    "desc" : "Initial pre-release of FLC.",
    "first" : true,
    "title" : "FLC Implementation Guide",
-   "ci-build" : "https://build.fhir.org/ig/servicewel/flc.fhir.base",
+   "ci-build" : "https://build.fhir.org/ig/servicewell/flc.fhir.base",
    "category" : "Infrastructure",
    "introduction" : "Implementationsguide for FLC made by Service Well."
 }
