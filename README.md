@@ -7,11 +7,11 @@ Welcome to the Implementation Guide for **FHIR Liquid Conversion (FLC)**, a powe
 
 ## 🔍 What is FLC?
 
-FHIR Liquid Conversion (FLC) is a structured, opinionated way of managing input-to-FHIR transformations using Liquid templates and standard FHIR IG tooling. It builds on the open source project [FHIR Converter](https://github.com/microsoft/FHIR-Converter) but introduces several key improvements:
+FHIR Liquid Conversion (FLC) is a structured, opinionated way of managing input-to-FHIR transformations using Liquid templates and standard FHIR IG tooling. It builds on Microsoft's [FHIR Converter](https://github.com/microsoft/FHIR-Converter) but introduces several key improvements:
 
-## 🔧 About This Implementationguide
+## 🔧 About This Project: Building on the FHIR Liquid Converter (FLC)
 
-This Implementation Guide adds profiles and extensions to be able to package FLC int an Implementation Guide.
+This Implementation Guide builds upon the work initiated by Microsoft in their [FHIR Liquid Converter (FLC)](https://github.com/microsoft/FHIR-Converter) project. We’ve **forked the original engine** and extended it with several enhancements, while maintaining full compatibility with the core transformation principles.
 
 Rather than creating a separate transformation project structure around the engine, our goal is to **enable direct use of FLC within an IG**. All mapping resources – including FSH definitions and transformation templates – are authored and maintained inside the IG itself, making the conversion logic version-controlled and portable.
 
@@ -30,10 +30,10 @@ We have introduced the following key improvements to support our use cases:
 
 ## 🤝 Philosophy and Vision
 
-Our aim is not to replace or compete with FHIR-Converter approach, but to **build on their open idea** in a way that aligns with our needs:
+Our aim is not to replace or compete with Microsoft’s approach, but to **build on their open idea** in a way that aligns with our needs:
 
 - **IG-native workflows**: We believe mappings should live and evolve inside the IG that owns them – just like profiles do.
-- **Federated mappings**: The engine and templates are designed to reference **external Liquid templates and ConceptMaps**, allowing reuse across FLC-based IGs. (ToDo)
+- **Federated mappings**: The engine and templates are designed to reference **external Liquid templates and ConceptMaps**, allowing reuse across FLC-based IGs.
 - **Terminology-first**
 
 FLC enables both **human-readable** and **machine-executable** transformations, directly linked to terminology servers and structured with official FHIR packaging mechanisms.
@@ -48,7 +48,6 @@ Recomended IG structure:
 input/
 ├── fsh/                  # Standard FSH files defining models, mappings, and terminology used in the transformation
 │   ├── logicalmodels/    # Logical models representing source and target structures
-│   │   ├──source/        # Sourcemodels
 │   ├── logicalmaps/      # ConceptMaps used exclusively for logical (structural) mapping, not code translation
 │   ├── conceptmaps/      # ConceptMaps referenced by the mapping logic. These may be defined locally or resolved dynamically via a FHIR Terminology Server.
 │   ├── valuesets/        # ValueSets used during transformation; may be embedded or externally referenced via terminology service.
@@ -63,56 +62,100 @@ flc-config.yaml           # Configuration file specifying sources, targets, temp
 
 ---
 
-## Dependencies
+## 🔄 Dependencies
 
 If your FLC templates use external terminology (e.g. EU Laboratory standards), make sure to declare these as dependencies in your `sushi-config.yaml`:
 
 ```yaml
 dependencies:
-  hl7.fhir.eu.ips: 0.1.0
+  hl7.fhir.eu.laboratory: 0.1.0
+  servicewell.fhir.flc.base: 1.0.0
 ```
 
-All ConceptMaps referenced in FLC must be available in your local FHIR terminology service.
+All ConceptMaps referenced in FLC must be available in your local Ontoserver or terminology service.
 
 ---
 
-## Components Explained
+## 🧩 Components Explained
 
 - `StructureMap` (with profile `LiquidStructureMap`) is used to declare:
-  - Source structure (e.g., `FLCSourcePatient`)
-  - Target structure (e.g., `Patient`)
-  - Linked Liquid template file (e.g., `ExamplePatient.liquid`)
-  - Terminology packages (ToDo)
+  - Source structure (e.g., `LabLMLimsRequestResponseSourceXML`)
+  - Target structure (e.g., `Bundle` or `DiagnosticReport`)
+  - Linked Liquid template file
+  - Terminology packages
 
 - `ConceptMap` links external/local source codes to FHIR target values
 - `Liquid` templates transform parsed input → FHIR JSON using placeholders
 
 ---
 
-## Getting Started as a FLC Developer TODO
+## 🚀 Getting Started as a Developer
 
+👉 **Step 1: Clone or initialize this IG**
 
+```bash
+git clone https://github.com/servicewell/servicewell.fhir.flc.git
+cd servicewell.fhir.flc
+```
 
+👉 **Step 2: Install SUSHI and build IG**
 
+```bash
+npm install -g fsh-sushi
+sushi .
+```
 
-# Contribute TODO
-TODO: Explain how other users and developers can contribute to make your code better. 
+👉 **Step 3: Review Liquid templates**
 
+Navigate to `input/flc/*.liquid` and connect them to the appropriate `StructureMap`
 
-## Placeholders to Complete
+👉 **Step 4: Register terminology**
 
-- [ ] Add narrative guides for developers and informaticians
-- [ ] Describe how to publish your FLC IG using CI/CD
+Make sure Ontoserver (or your FHIR terminology server) has the required ConceptMaps installed.
+
+👉 **Step 5: Run conversion** (in your runtime environment)
+
+Use your FHIR Liquid Engine (e.g., `fhir-tools` or custom runtime) to process:
+
+```bash
+fhir-tools flc-run --map converter-limsxml --input input/xml/sample.xml
+```
 
 ---
 
-##  Contact
+## 📌 Placeholders to Complete
 
-This guide is maintained by **Service Well AB**. 
+- [ ] Define `StructureDefinition` profiles for each supported XML input
+- [ ] Include `TestScript` or `Bundle` with example input/output
+- [ ] Add narrative guides for developers and informaticians
+- [ ] Describe how to publish your FLC IG using CI/CD
+- [ ] Document fallback logic / error handling in Liquid templates
+- [ ] Add search index for available converters (in GUI or registry)
+
+---
+
+## 📬 Contact
+
+This guide is maintained by **Service Well AB**. For feedback or inquiries:
+
+📧 [info@servicewell.se](mailto:info@servicewell.se)
 🌐 https://www.servicewell.se
 
 
- 
+# Getting Started
+TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
+1.	Installation process
+2.	Software dependencies
+3.	Latest releases
+4.	API references
 
+# Build and Test
+TODO: Describe and show how to build your code and run the tests. 
 
+# Contribute
+TODO: Explain how other users and developers can contribute to make your code better. 
 
+If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
+- [ASP.NET Core](https://github.com/aspnet/Home)
+- [Visual Studio Code](https://github.com/Microsoft/vscode)
+- [Chakra Core](https://github.com/Microsoft/ChakraCore)
