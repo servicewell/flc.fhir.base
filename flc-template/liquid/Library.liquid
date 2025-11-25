@@ -406,12 +406,17 @@
         {% endif %}
 
         {% for c in Library.content %}              
-            {% for ext in c.extension.where(url = 'http://bki.skane.se/fhir/earkiv-ips-pmo-flc/StructureDefinition/attachment-folder-structure') %}
+            {% for ext in c.extension.where(url = 'http://canonical.fhir.link/flc/base/StructureDefinition/attachment-folder-structure') %}
+                {% assign folderPath = nil %}
+                {% assign logicalFilename = nil %}
+                {% assign filedescription = nil %}
                 {% for subext in ext.extension %}
                     {% if subext.where(url = 'folder-path').exists() %}
                         {%  assign folderPath = subext.valueString %} 
                     {% elsif subext.where(url = 'logical-filename').exists() %}
                         {%  assign logicalFilename = subext.valueString %}
+                    {% elsif subext.where(url = 'description').exists() %}
+                        {%  assign filedescription = subext.valueString %}
                     {% endif %} 
                 {% endfor %} 
             {% endfor %}            
@@ -421,10 +426,13 @@
             <td colspan="2">
                 <table>
                 {% if folderPath %}
-                <tr><th scope="row"><b>Content: </b></th><td style="padding-left: 4px;">text/liquid</td></tr>
+                <tr><th scope="row"><b>Content: </b></th><td style="padding-left: 4px;">{% if c.contentType.exists()%}{{c.contentType}}{% else %}text/liquid{% endif %}</td></tr>
                 <tr><th scope="row"><b>File Name: </b></th><td style="padding-left: 4px;">{{logicalFilename}}</td></tr>
                 <tr><th scope="row"><b>Folder: </b></th><td style="padding-left: 4px;">{{folderPath}}</td></tr>               
                 <tr><th scope="row"><b>Relative Path: </b></th><td style="padding-left: 4px;">{{folderPath}}/{{logicalFilename}}</td></tr>
+                {% if filedescription %}
+                <tr><th scope="row"><b>Additional info: </b></th><td style="padding-left: 4px;">{{filedescription}}</td></tr>               
+                {% endif %}
                 <tr><td colspan="2"><pre><code>{{ decoded }}</code></pre></td></tr>
                 {% else %}
                     <tr><th><b>Content: </b> {{ c.contentType }}</th></tr>
