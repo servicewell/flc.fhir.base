@@ -10,5 +10,5 @@
    "title" : "FLC Implementation Guide",
    "ci-build" : "https://build.fhir.org/ig/servicewell/flc.fhir.base",
    "category" : "Infrastructure",
-   "introduction" : "Implementationsguide for FLC made by Service Well."
+   "introduction" : "Implementation Guide for FLC made by Service Well."
 }

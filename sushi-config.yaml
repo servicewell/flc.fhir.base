@@ -7,7 +7,7 @@ id: flc.fhir.base
 canonical: http://canonical.fhir.link/flc/base
 name: flc
 title: FLC Implementation Guide
-description: Implementationsguide for FLC made by Service Well
+description: Implementation Guide for FLC made by Service Well
 status: draft # draft | active | retired | unknown
 version: 0.2.3
 fhirVersion: 4.0.1
