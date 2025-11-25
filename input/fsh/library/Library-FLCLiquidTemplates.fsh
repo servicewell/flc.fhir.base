@@ -20,6 +20,7 @@ Usage: #definition
 * content[+].id = "ig-loader-codesystem.json"
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/codesystem"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "codesystem.json"
+* content[=].extension[attachment-folder-structure].extension[description].valueString = "Basic json conceptmap for FLC, NOT FHIR"
 // Source data for examples used in project
 * content[+].id = "ig-loader-ExamplePatient.json"
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "sampledata"
