@@ -1,6 +1,6 @@
 {
     "name": "flc.fhir.base",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "type": "IG",
     "canonical": "http://canonical.fhir.link/flc/base",
     "url": "http://canonical.fhir.link/flc/base/ImplementationGuide/flc.fhir.base",
@@ -9,7 +9,7 @@
     "fhirVersions": [ "4.0.1" ],
     "dependencies": {},
     "keywords": [
-        "flc"
+        "flc", "converter", "liquid"
     ],
     "author": "Service Well AB",
     "maintainers": [

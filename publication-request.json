@@ -1,14 +1,10 @@
 {
    "package-id" : "flc.fhir.base",
-   "version" : "0.2.3",
-   "path" : "http://canonical.fhir.link/flc/base/0.2.3",
+   "version" : "0.2.4",
+   "path" : "http://canonical.fhir.link/flc/base/0.2.4",
    "mode" : "milestone",
    "status" : "draft",
    "sequence" : "Pre-Release",
    "desc" : "Initial pre-release of FLC.",
-   "first" : true,
-   "title" : "FLC Implementation Guide",
-   "ci-build" : "https://build.fhir.org/ig/servicewell/flc.fhir.base",
-   "category" : "Infrastructure",
-   "introduction" : "Implementation Guide for FLC made by Service Well."
+   "first" : false
 }
