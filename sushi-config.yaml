@@ -9,10 +9,10 @@ name: flc
 title: FLC Implementation Guide
 description: Implementation Guide for FLC made by Service Well
 status: draft # draft | active | retired | unknown
-version: 0.2.3
+version: 0.2.4
 fhirVersion: 4.0.1
 copyrightYear: 2025+
-releaseLabel: ci-build
+releaseLabel: stable [WIP]
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
